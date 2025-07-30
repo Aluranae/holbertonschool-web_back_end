@@ -10,7 +10,7 @@ import typing
 
 
 async def async_generator() -> typing.AsyncGenerator[float, None]:
-    """asynchronous generator that yields 10 random numbers"""
+    """Asynchronous generator that yields 10 random numbers."""
     for i in range(10):
         await asyncio.sleep(1)
         random_number = random.uniform(0, 10)
