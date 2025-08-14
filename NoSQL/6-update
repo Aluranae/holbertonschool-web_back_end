@@ -1,0 +1,8 @@
+// This script updates all documents from the 'school' collection
+// where the field 'name' equals 'Holberton school'
+// It adds a new field 'address' with the value '972 Mission street'
+
+db.school.updateMany(
+    {name: "Holberton school"},
+    {$set: {address: "972 Mission street"}}
+)
