@@ -1,13 +1,12 @@
-// Le programme parle à l'utilisateur
-process.stdout.write('Welcome to Holberton School, what is your name?\n');
+const readline = require('readline');
 
-// Écoute des réponses envoyées par l'utilisateur (stdin)
-process.stdin.on('data', (input) => {
-  const userName = input.toString().trim();
-  process.stdout.write(`Your name is: ${userName}\n`);
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
 });
 
-// Lorsque le flux est terminé (Ctrl+D par exemple)
-process.stdin.on('end', () => {
-  process.stdout.write('This important software is now closing\n');
+rl.question('Welcome to Holberton School, what is your name?\n', (name) => {
+  console.log(`Your name is: ${name}`);
+  console.log('This important software is now closing');
+  rl.close();
 });
