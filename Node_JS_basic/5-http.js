@@ -11,10 +11,10 @@ const app = http.createServer(async (req, res) => {
     try {
       const list = await countStudents(process.argv[2]);
       res.statusCode = 200;
-      res.end(list);
+      res.end(`This is the list of our students\n${list}`);
     } catch (err) {
       res.statusCode = 500;
-      res.end('Cannot load the database');
+      res.end('This is the list of our students\nCannot load the database');
     }
   } else {
     res.statusCode = 404;
